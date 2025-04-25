@@ -21,6 +21,10 @@
 #include "utils.h"
 #include "nfapi/oai_integration/nfapi_pnf.h"
 
+#ifdef E2_AGENT
+#include "openair2/E2AP/RAN_FUNCTION/CUSTOMIZED/ran_func_srs_extern.h"
+#endif
+
 #define MAX_IF_MODULES 100
 
 static NR_IF_Module_t *nr_if_inst[MAX_IF_MODULES];
@@ -214,6 +218,10 @@ static void handle_nr_srs(NR_UL_IND_t *UL_info)
                                frame,
                                slot,
                                srs_ind);
+    #ifdef E2_AGENT
+    signal_nfapi_srs_indication(srs_ind);
+    #endif
+
   }
 
   UL_info->srs_ind.number_of_pdus = 0;
