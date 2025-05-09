@@ -1573,6 +1573,7 @@ void handle_nr_srs_measurements(const module_id_t module_id,
                                                  report_tlv->length,
                                                  &nr_srs_channel_iq_matrix,
                                                  sizeof(nfapi_nr_srs_normalized_channel_iq_matrix_t));
+      dump_srs_channel_iq_matrix(&nr_srs_channel_iq_matrix, "mac_channel_rfsim.iq");
 
 #ifdef SRS_IND_DEBUG
       LOG_I(NR_MAC, "nr_srs_channel_iq_matrix.normalized_iq_representation = %i\n", nr_srs_channel_iq_matrix.normalized_iq_representation);
