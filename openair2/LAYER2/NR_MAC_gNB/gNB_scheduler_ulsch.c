@@ -1498,7 +1498,7 @@ void handle_nr_srs_measurements(const module_id_t module_id,
   }
   NR_SCHED_LOCK(&nrmac->sched_lock);
 
-#ifdef SRS_IND_DEBUG
+//#ifdef SRS_IND_DEBUG
   LOG_I(NR_MAC, "frame = %i\n", frame);
   LOG_I(NR_MAC, "slot = %i\n", slot);
   LOG_I(NR_MAC, "srs_ind->rnti = %04x\n", srs_ind->rnti);
@@ -1506,7 +1506,7 @@ void handle_nr_srs_measurements(const module_id_t module_id,
   LOG_I(NR_MAC, "srs_ind->timing_advance_offset_nsec = %i\n", srs_ind->timing_advance_offset_nsec);
   LOG_I(NR_MAC, "srs_ind->srs_usage = %i\n", srs_ind->srs_usage);
   LOG_I(NR_MAC, "srs_ind->report_type = %i\n", srs_ind->report_type);
-#endif
+//#endif
 
   NR_UE_info_t *UE = find_nr_UE(&nrmac->UE_info, srs_ind->rnti);
   if (!UE) {
