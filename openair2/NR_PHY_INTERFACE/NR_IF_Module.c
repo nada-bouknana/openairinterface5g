@@ -189,22 +189,6 @@ static void handle_nr_ulsch(NR_UL_IND_t *UL_info)
   }
 }
 
-// static void dump_srs_report(const nfapi_srs_report_tlv_t* report_tlv, const char* filename) {
-//   FILE* f = fopen(filename, "w");
-//   if (!f) {
-//     perror("Failed to open file");
-//     return;
-//   }
-
-//   for (size_t i = 0; i < 16384; ++i) {
-//     fprintf(f, "%zu,%u\n", i, report_tlv->value[i]);
-//   }
-
-//   fclose(f);
-
-//   return;
-// }
-
 static void handle_nr_srs(NR_UL_IND_t *UL_info)
 {
   if(NFAPI_MODE == NFAPI_MODE_PNF) {
