@@ -221,12 +221,6 @@ static void handle_nr_srs(NR_UL_IND_t *UL_info)
       signal_nfapi_srs_indication(&UL_info->srs_ind);
     #endif
 
-    if (num_srs>0 && i==0){
-    dump_srs_report(&srs_ind->report_tlv, "tlv_value_agent.csv");
-    LOG_I(NR_PHY, "(%d.%d) UL_info->srs_ind.pdu_list[%d].srs_usage: 0x%04x\n", frame, slot, i, srs_ind->srs_usage);
-    LOG_I(NR_PHY, "(%d.%d) UL_info->srs_ind.pdu_list[%d].report_type: 0x%04x\n", frame, slot, i, srs_ind->report_type);
-    LOG_I(NR_PHY, "(%d.%d) UL_info->srs_ind.pdu_list[%d].report_tlv.tag: 0x%04x\n", frame, slot, i, srs_ind->report_tlv.tag);
-    }
   }
 
   UL_info->srs_ind.number_of_pdus = 0;
